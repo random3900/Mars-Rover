@@ -1,13 +1,18 @@
-
+body{
+  
+  background-color: #76ead7 ;
+}
 
 
 header{
   display:block;
-  border-style:solid;
+  /* border-style:solid; */
   border-width: 2px 2px 2px 2px;
   text-align: center;
   font-size: 30pt;
   margin:auto;  
+  background-color: #393e46 ;
+  color: #eeeeee;
 }
 
 
@@ -18,9 +23,8 @@ section {
   box-sizing: border-box;
   width: 40%;
   height:100%;
-  padding: 0.5%;
+  padding: 1% 2%;
   font-style: italic;
-  
 }
 
 aside{
@@ -29,25 +33,27 @@ aside{
   height:100%;
   float:right;
   clear:both;
+  padding-right: 2%;
 }
 
 
-.container {
+.ct {
   background: black;
   display: inline-block;
-  border: 5px solid black;
+  border: 2px solid #bbb;
 }
 
-.grid {
+.gd {
   display: grid;
   grid-template-columns: repeat(12, 3.5vw);
   grid-template-rows: repeat(12, 8vh);
-  grid-gap: 2px;
- 
+  grid-gap: 0.2vh;
+  background-color: #bbb;
 }
 
 .cell {
-  background: white;
+  background:  #c4fb6d;
+  border: #bbb;
  }
 
 
@@ -90,7 +96,7 @@ aside{
 }
 
 .flip-card-back {
-  background-color: #2980b9;
+  background-color:#76ead7;
   color: white;
   transform: rotateY(180deg);
   padding:5px;
@@ -99,4 +105,12 @@ aside{
 
 
 
-
+/* 
+palette:
+#c4fb6d
+#bbb
+#eeeeee
+#393e46
+#76ead7
+#adf7ea
+ */

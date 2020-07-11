@@ -54,7 +54,7 @@ aside{
 .flip-card {
   background-color: transparent;
   width: 50vw;
-  height: 20vh;
+  height: 25vh;
   perspective: 1000px;
   float:right;
 }

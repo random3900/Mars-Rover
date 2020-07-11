@@ -40,22 +40,23 @@ aside{
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(12, 75px);
-  grid-template-rows: repeat(12,70px);
+  grid-template-columns: repeat(12, 3.5vw);
+  grid-template-rows: repeat(12, 8vh);
   grid-gap: 2px;
  
 }
 
 .cell {
- background: white;
-}
+  background: white;
+ }
 
 
 .flip-card {
   background-color: transparent;
-  width: 1250px;
-  height: 220px;
+  width: 50vw;
+  height: 20vh;
   perspective: 1000px;
+  float:right;
 }
 
 .flip-card-inner {

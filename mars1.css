@@ -15,15 +15,13 @@ header{
   color: #eeeeee;
 }
 
-
-
 section {
   display:inline-block;
   margin: auto;
   box-sizing: border-box;
   width: 40%;
   height:100%;
-  padding: 1% 2%;
+  padding: 0.5% 3%;
   font-style: italic;
 }
 
@@ -33,7 +31,7 @@ aside{
   height:100%;
   float:right;
   clear:both;
-  padding-right: 2%;
+  padding-right: 5%;
 }
 
 
@@ -45,8 +43,8 @@ aside{
 
 .gd {
   display: grid;
-  grid-template-columns: repeat(12, 3.5vw);
-  grid-template-rows: repeat(12, 8vh);
+  grid-template-columns: repeat(12, 3.0vw);
+  grid-template-rows: repeat(12, 7.0vh);
   grid-gap: 0.2vh;
   background-color: #bbb;
 }
@@ -114,3 +112,5 @@ palette:
 #76ead7
 #adf7ea
  */
+
+ 

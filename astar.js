@@ -3,16 +3,21 @@ var openSet = [];
 var closedSet = [];
 var path = [];
 var count = 0;
-var ty = 0;
 var x, y;
 var source, dest;
 for (i = 0; i < 12; i++) {
   grid[i] = [];
   for (j = 0; j < 12; j++) grid[i][j] = 1;
 }
-
+var weight;
 var type = -1,
   count = 0;
+function reset()
+{
+  source={first:0, second:0 };
+  dest={first:0, second:0 };
+  
+}
 function src() {
   type = 1; //For source type is equal to one
 }
@@ -20,9 +25,13 @@ function src() {
 function dst() {
   type = 2; //For destination type is equal to two
 }
+function dst1()
+{
+  type=3;
+}
 
 function blk() {
-  type = 3; // For block type is equal to three
+  type = 4; // For block type is equal to three
 }
 
 function reply_click(a1) {
@@ -30,26 +39,51 @@ function reply_click(a1) {
   if (type == 1) {
     document.getElementById(a1).style.backgroundColor = "GREEN";
     source = { first: Math.floor((a1 - 1) / 12), second: (a1 - 1) % 12 };
-    console.log(a1,source);
+    //console.log(a1,source);
     type++;
   } else if (type == 2) {
     document.getElementById(a1).style.backgroundColor = "RED";
     dest = { first: Math.floor((a1 - 1) / 12), second: (a1 - 1) % 12 };
-    console.log(a1,dest)
+    //console.log(a1,dest);
     type++;
-  } else if (type == 3) {
+    count=0;
+  } 
+  
+  else if (type ==4) {
     document.getElementById(a1).style.backgroundColor = "#393e46";
     console.log(a1,Math.floor((a1 - 1) / 12), (a1 - 1) % 12);
     grid[Math.floor((a1 - 1) / 12)][(a1 - 1) % 12] = 0;
-  } else {
+  } 
+  else if(type==3)
+         { document.getElementById(a1).style.backgroundColor = "RED";
+ dest1 = { first: Math.floor((a1 - 1) / 12), second: (a1 - 1) % 12 };
+          
+ /*if(dest1.first==None&&dest1.second==None)
+   { dest1.first==dest.first;
+      dest1.second==dest.second;
+   }*/  
+    type++;
+    count=1;
+    
+          }
+  else {
   }
 }
-function start() {
+function start() 
+{ if(count==1)
+  {
+  //console.log("hi"); 
   aStarSearch(source, dest, grid);
+ //console.log("hellooo");
+ aStarSearch(source, dest1, grid);
+  }
+ else 
+   aStarSearch(source, dest, grid);
+ 
 }
 const FLT_MAX = 100000;
-const ROW = 5;
-const COL = 5;
+const ROW = 12;
+const COL = 12;
 // typedef pair<int, int> Pair;
 // typedef pair<double, pair<int, int>> pPair;
 
@@ -71,6 +105,18 @@ function cell_destination(row, col, dest) {
   else return false;
 }
 
+var choice;
+var w;
+choice=1;
+function heuristics(weight)
+{ choice=1;
+ w=weight;
+  
+}
+function heuristics1(weight)
+{ choice=2;
+w=weight;}
+
 function euclidian_distance(row, col, dest) {
   /*console.log(
     row,
@@ -91,12 +137,9 @@ function manhattan_distance(row, col, dest) {
   return Math.abs(row - dest.first) + Math.abs(col - dest.second);
 }
 
-function diagonal_distance(row, col, dest) {
-  return Math.max(Math.abs(row - dest.first), Math.abs(col - dest.second));
-}
 
 function tracePath(C, dest) {
-  console.log("\nThe Path is ");
+  //console.log("\nThe Path is ");
   var row = dest.first;
   var col = dest.second;
 
@@ -114,18 +157,33 @@ function tracePath(C, dest) {
   while (Path.length != 0) {
     p = Path[Path.length - 1];
     Path.pop();
-    console.log(p.first, p.second);
+    //console.log(p.first, p.second);
     // 0 0->1; 0 1 ->2 ; row*12+col+1
     cellNum = (p.first) * 12 + p.second +1;
-    console.log(cellNum);
+    
+    //console.log(cellNum);
     document.getElementById(cellNum).style.backgroundColor = "blue";
+    if(p.first==source.first&&p.second==source.second)
+      {document.getElementById(cellNum).style.backgroundColor = "green";
+        
+      }
+    if(count==1)
+      {
+    if(p.first==dest1.first&&p.second==dest1.second)
+      {document.getElementById(cellNum).style.backgroundColor = "purple";
+        
+      } }
+    if(p.first==dest.first&&p.second==dest.second)
+      {document.getElementById(cellNum).style.backgroundColor = "red";
+        
+      }
   }
 
   return;
 }
 // grid, source, dest
 function aStarSearch(source, dest, grid) {
-  console.log(source, dest, grid);
+  //console.log(source, dest, grid);
   if (cell_destination(source.first, source.second, dest) === true) {
     return;
   }
@@ -150,7 +208,7 @@ function aStarSearch(source, dest, grid) {
       };
     }
   }
-  console.log(C);
+  //console.log(C);
   var i = source.first;
   var j = source.second;
   C[i][j].f = 0.0;
@@ -165,7 +223,7 @@ function aStarSearch(source, dest, grid) {
   var gNew, hNew, fNew;
   while (openList.length != 0) {
     p = openList[0];
-    console.log(p);
+    //console.log(p);
     openList.shift();
     if (!cell_valid(p.second.first, p.second.second)) continue;
     i = p.second.first;
@@ -187,8 +245,16 @@ function aStarSearch(source, dest, grid) {
           cell_unblocked(grid, i + x[i_ind], j + y[i_ind]) === true
         ) {
           gNew = C[i][j].g + 1.0;
-          hNew = euclidian_distance(i + x[i_ind], j + y[i_ind], dest);
-          fNew = gNew + hNew;
+          if(choice==1)
+            {
+          hNew = euclidian_distance(i + x[i_ind], j + y[i_ind], dest); }
+          else if(choice==2)
+            { hNew = manhattan_distance(i + x[i_ind], j + y[i_ind], dest);  }
+          else
+            {
+              hNew = euclidian_distance(i + x[i_ind], j + y[i_ind], dest); 
+            }
+          fNew = gNew + w*hNew;
           if (
             C[i + x[i_ind]][j + y[i_ind]].f == FLT_MAX ||
             C[i + x[i_ind]][j + y[i_ind]].f > fNew

@@ -78,8 +78,8 @@ function setCell(cellNumber){
         color(cellNumber,"GREEN");
         color(xy_to_id(source),"#c4fb6d");
         source = id_to_xy(cellNumber);
-        inputType = "Destination";
-        setVisibility("dest");
+        //inputType = "Destination";
+        //setVisibility("dest");
         return;
       }
     }
@@ -87,8 +87,8 @@ function setCell(cellNumber){
       free(cellNumber);
       color(cellNumber,"GREEN");
       source = id_to_xy(cellNumber);
-      inputType = "Destination";
-      setVisibility("dest");
+      //inputType = "Destination";
+      //setVisibility("dest");
       return;
     }
   }
@@ -121,8 +121,8 @@ function setCell(cellNumber){
         color(cellNumber,"RED");
         color(xy_to_id(dest),"#c4fb6d");
         dest = id_to_xy(cellNumber);
-        inputType = "Block";
-        setVisibility("block");
+        //inputType = "Block";
+        //setVisibility("block");
         return;
       }
     }
@@ -130,8 +130,8 @@ function setCell(cellNumber){
       free(cellNumber);
       color(cellNumber,"RED");
       dest = id_to_xy(cellNumber);
-      inputType = "Block";
-      setVisibility("block");
+      //inputType = "Block";
+      //setVisibility("block");
       return;
     }
   }

@@ -1,3 +1,4 @@
+ 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
 body {
@@ -38,6 +39,7 @@ aside {
   display: inline-block;
   width: 58%;
   height: 100%;
+  float: right;
   clear: both;
   padding-right: 5%;
   margin-top: 6vh;
@@ -100,26 +102,40 @@ aside {
  
 }
 
-.flip-card-front {
+.fcf-bfs {
   /* background-color: #bbb; */
   color: white;
   padding: 5px;
+  background-image: url(https://media0.giphy.com/media/XBpUGMmoGM4DVHoRMZ/source.gif) ;
   background-repeat: no-repeat;
   background-size: cover;
   width:45vw;
   height:50vh;
 
 }
-.bfs{
-  background-image: url(https://media0.giphy.com/media/XBpUGMmoGM4DVHoRMZ/source.gif) ;
-}
-.bell {
+
+.fcf-bell {
   /* background-color: #bbb; */
-  background-image: image("../gifs/lee.gif") ;
+  color: white;
+  padding: 5px;
+  background-image: url(../gifs/bfs.gif) ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:45vw;
+  height:50vh;
+
 }
 
-.lee{
-background-image: url("https://media.indiedb.com/images/articles/1/267/266828/DezzanGif5-min.gif");
+.fcf-lee {
+  /* background-color: #bbb; */
+  color: white;
+  padding: 5px;
+  background-image: url(../gifs/lee.gif) ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:45vw;
+  height:50vh;
+
 }
 
 .flip-card-back {
@@ -140,3 +156,4 @@ palette:
 #76ead7
 #adf7ea
  */
+

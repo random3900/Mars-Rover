@@ -1,43 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-     <meta charset = "utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
 
     <title>Mars Mission</title>
-    <link rel="stylesheet" href="../css/comfinal_css.css" />
+    <link rel="stylesheet" href="../css/bfs.css" />
 
-    
+    <!--CSS-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
   </head>
-  <body >
+  <body style="background-color: #adf7ea;">
     <header>
-
-	<div >
-        <button class="button1" onclick="source_fn()">SOURCE</button>
-        <button class="button2" onclick="destination()">DESTINATION</button>
-        <button class="button3" onclick="block_fn()">BLOCK</button>
-        <button class="button4" onclick="findPath()">START</button>
-        <button class="button5" onclick="initialize()">RESET THE GRID</button>
-    <button class="button6" type="button" onclick="refresh()">BACK TO THE DASHBOARD</button>
-        <div id="src">
-          Select the Source
-        </div>
-        <div id="dest">
-          Select the Destination
-        </div>
-        <div id="block">
-          Select the Block(s)
-        </div>
-        <div id="info">
-          Info
-        </div>
-      </div>
-      
+      <p>Mars Rover</p>
     </header>
 
-    <section class="left" id="menu">
-      <div class="container">
-        <div class="grid">
+    <section class="left" style="display: inline-block;">
+      <div class="ct">
+        <div class="gd">
           <div class="cell" id="1" onclick="reply_click(this.id)"></div>
           <div class="cell" id="2" onclick="reply_click(this.id)"></div>
           <div class="cell" id="3" onclick="reply_click(this.id)"></div>
@@ -187,27 +171,59 @@
     </section>
 
     <aside>
-  
- <div class="container1" style="position: absolute">
-    <div class="grid1"> 
-        <div class="flip">
-           <div class="front" style="background-image: url(https://i.gifer.com/NYRf.gif); width:500px;height:300px">
-       <h1 class="text-shadow">BFS Algorithm</hi>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h1 class="text-shadow">Bellman Ford Algorithm</h1>
           </div>
-          <div class="back">
-       
-       <h1>UNIQUENESS:</h1>
-        <p>Single source-Single destination. The resulting grid highlights the shortest path as well as the traversed path.</p>
-      <h1>STEPS TO ATTAIN RESULT:</h1>
-      <p>(i) Click the SOURCE button and select the cell you wish<br> the source to be.</p>
-      <p>(ii) Then,click the DESTINATION button and choose one cell<br> which will be destination.</p>
-      <p>(iii) Click BLOCKS button to choose blocks in the grid. <br><br>(iv) Click START button. The rsulting grid will appear.</p>
+          <div class="flip-card-back">
+            <h1>UNIQUENESS:</h1>
+            <p>
+              Multiple Source-Single Destination. The algorithm higlights all
+              the shortest paths from all the selected source cells to the
+              destination cell.
+            </p>
+            <h1>GUIDING TO RESULT:</h1>
+            <p>
+              (i) Click the SOURCE button and select a maximum <br />
+              of 5 cells that you need to explore.<br /><br />
+              (ii)Click the DESTINATION button and select a<br />
+              single cell that you want to reach.<br /><br />
+              (iii)Click BLOCKS button and select all the <br />cells that are
+              to blocked and click START button<br /><br />
+              (iv)The result highlights paths from selected <br />source(s) to
+              destination.
+            </p>
+          </div>
+        </div>
+        <button class="btn btn-light" onclick="source_fn()">
+          Select Source
+        </button>
+        <button class="btn btn-light" onclick="destination()">
+          Select Destination
+        </button>
+        <button class="btn btn-light" onclick="block_fn()">
+          Select Block
+        </button>
+        <button class="btn btn-light" onclick="findPath()">
+          Find Path
+        </button>
+        <button class="btn btn-light" onclick="initialize()">Reset</button>
+        <div id="src">
+          Select the Source
+        </div>
+        <div id="dest">
+          Select the Destination
+        </div>
+        <div id="block">
+          Select the Block(s)
+        </div>
+        <div id="info">
+          Info
         </div>
       </div>
-  </div>
-  </div>
-</aside>
-    <script src="../js/bellman_1.js"></script>
-    
+    </aside>
+    <script src="../js/bfs_js.js"></script>
+    <!-- <script src="astar.js"></script> -->
   </body>
 </html>

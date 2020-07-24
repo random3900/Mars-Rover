@@ -113,6 +113,18 @@ aside {
 
 }
 
+.flip-card-front-bell {
+  /* background-color: #bbb; */
+  color: white;
+  padding: 5px;
+  background-image: url(https://github.com/random3900/random3900.github.io/blob/master/gifs/bfs.gif) ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:45vw;
+  height:50vh;
+
+}
+
 .flip-card-back {
   background-color: #76ead7;
   color: white;

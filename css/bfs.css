@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
 body {
   background-image: url("https://i.pinimg.com/originals/e4/98/1a/e4981a3dd4aa2fa6f0bc84cde9087c7a.jpg");
   color: #555;
   text-align: center;
+  font-family: "Roboto Mono";
+  background-repeat: no-repeat;
+  background-size: cover;
 
 }
 
@@ -16,6 +19,7 @@ header {
   margin: auto;
   background-color: #393e46;
   color: #eeeeee;
+  
 }
 
 section {
@@ -26,6 +30,8 @@ section {
   height: 100%;
   padding: 0.5% 3%;
   font-style: italic;
+  margin-top: 6vh;
+  padding-left: 6vw;
 }
 
 aside {
@@ -35,20 +41,21 @@ aside {
   float: right;
   clear: both;
   padding-right: 5%;
+  margin-top: 6vh;
 }
 
 .ct {
   background: black;
   display: inline-block;
-  border: 2px solid #28bd40;
+  border: 2px solid #8f8989;
 }
 
 .gd {
   display: grid;
   grid-template-columns: repeat(12, 3vw);
   grid-template-rows: repeat(12, 7vh);
-  grid-gap: 0.2vh;
-  background-color: #28bd40;
+  grid-gap: 0.6vh;
+  background-color: #8f8989;
 }
 
 .cell {
@@ -58,12 +65,13 @@ aside {
 
 .flip-card {
   background-color: transparent;
-  width: 50vw;
-  height: 80vh;
+  width:45vw;
+  height:50vh;
   perspective: 1000px;
   float: right;
-  font-family: "Montserrat","sans-serif";
-
+  font-family: "Roboto Mono","sans-serif";
+  font-size: 0.8em;
+  
 }
 
 .flip-card-inner {
@@ -74,8 +82,8 @@ aside {
   transition: transform 0.6s;
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding-bottom: 10vh;
-
+  padding-bottom: 6vh;
+  margin-bottom: 3vh;
 }
 
 .flip-card:hover .flip-card-inner {
@@ -90,15 +98,19 @@ aside {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 5%;
+ 
 }
 
 .flip-card-front {
   /* background-color: #bbb; */
-  color: black;
+  color: white;
   padding: 5px;
-  background-image: url(https://media0.giphy.com/media/XBpUGMmoGM4DVHoRMZ/source.gif);
-  width:500px;
-  height:300px
+  background-image: url(https://media0.giphy.com/media/XBpUGMmoGM4DVHoRMZ/source.gif) ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:45vw;
+  height:50vh;
+
 }
 
 .flip-card-back {
@@ -107,8 +119,9 @@ aside {
   background: #441c1c;
   color: #fff;
   transform: rotateY(180deg);
-  padding: 5px;
 }
+
+
 /* 
 palette:
 #c4fb6d

@@ -14,10 +14,10 @@
       crossorigin="anonymous"
     />
   </head>
-  <body style="background-color: #adf7ea;">
-    <header>
+  <body>
+    <!-- <header>
       <p>Mars Rover</p>
-    </header>
+    </header> -->
 
     <section class="left" style="display: inline-block;">
       <div class="ct">
@@ -185,30 +185,31 @@
             </p>
             <h1>GUIDING TO RESULT:</h1>
             <p>
-              (i) Click the SOURCE button and select a maximum <br />
-              of 5 cells that you need to explore.<br /><br />
+              (i) Click the SOURCE button and select a maximum of 5 cells <br />
+              that you need to explore.<br />
               (ii)Click the DESTINATION button and select a<br />
-              single cell that you want to reach.<br /><br />
-              (iii)Click BLOCKS button and select all the <br />cells that are
-              to blocked and click START button<br /><br />
-              (iv)The result highlights paths from selected <br />source(s) to
-              destination.
+              single cell that you want to reach.<br />
+              (iii)Click BLOCKS button and select all the cells that are <br />
+              to blocked and click START button<br />
+              (iv)The result highlights paths from selected source(s) to
+              destination.<br />
             </p>
           </div>
         </div>
-        <button class="btn btn-light" onclick="source_fn()">
-          Select Source
+        <button class="btn btn-dark btn-outline-success" onclick="source_fn()">
+          Source
         </button>
-        <button class="btn btn-light" onclick="destination()">
-          Select Destination
+        <button class="btn btn-dark btn-outline-success" onclick="destination()">
+          Destination
         </button>
-        <button class="btn btn-light" onclick="block_fn()">
-          Select Block
+        <button class="btn btn-dark btn-outline-success" onclick="block_fn()">
+          Block
         </button>
-        <button class="btn btn-light" onclick="findPath()">
+        <button class="btn btn-dark btn-outline-success" onclick="findPath()">
           Find Path
         </button>
-        <button class="btn btn-light" onclick="initialize()">Reset</button>
+        <button class="btn btn-dark btn-outline-success" onclick="initialize()">Reset</button>
+        <button class="btn btn-dark btn-outline-success" onclick="initialize()">Back</button>
         <div id="src">
           Select the Source
         </div>

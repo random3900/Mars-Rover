@@ -1,5 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
-
 body {
   background-image: url("https://i.pinimg.com/originals/e4/98/1a/e4981a3dd4aa2fa6f0bc84cde9087c7a.jpg");
   color: #555;
@@ -7,9 +7,7 @@ body {
   font-family: "Roboto Mono";
   background-repeat: no-repeat;
   background-size: cover;
-
 }
-
 
 section {
   display: inline-block;
@@ -48,15 +46,15 @@ aside {
 }
 
 .cell {
-background: #282828;
+  background: #282828;
   border: #bbb;
-color:"white";
+  color: "white";
 }
 
 .flip-card {
   background-color: transparent;
-  width:43vw;
-  height:63vh;
+  width: 43vw;
+  height: 63vh;
   perspective: 1000px;
   float: right;
   font-family: "Roboto Mono";
@@ -74,69 +72,70 @@ color:"white";
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding-bottom: 6vh;
   margin-bottom: 3vh;
-  
 }
 
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-.fcf-bell,.fcf-bfs,.fcf-lee,.fcf-astar,
-.flip-card-back{
+.fcf-bell,
+.fcf-bfs,
+.fcf-lee,
+.fcf-astar,
+.flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 5%;
- 
 }
 
 .fcf-astar {
+  /* background-color: #bbb; */
   color: white;
   padding: 5px;
   background-image: url(../gifs/astar.gif);
   background-repeat: no-repeat;
   background-size: cover;
-  width:45vw;
-  height:65vh;
-
+  width: 45vw;
+  height: 65vh;
 }
 .fcf-bfs {
+  /* background-color: #bbb; */
   color: white;
   padding: 5px;
-  background-image: url(../gifs/bell.gif) ;
+  background-image: url(../gifs/bell.gif);
   background-repeat: no-repeat;
   background-size: cover;
-  width:43vw;
-  height:63vh;
-
+  width: 43vw;
+  height: 63vh;
 }
 
 .fcf-bell {
+  /* background-color: #bbb; */
   color: white;
   padding: 5px;
-  background-image: url(../gifs/bfs.gif) ;
+  background-image: url(../gifs/bfs.gif);
   background-repeat: no-repeat;
   background-size: cover;
-  width:43vw;
-  height:63vh;
-
+  width: 43vw;
+  height: 63vh;
 }
 
 .fcf-lee {
+  /* background-color: #bbb; */
   color: white;
   padding: 5px;
-  background-image: url(../gifs/lee.gif) ;
+  background-image: url(../gifs/lee.gif);
   background-repeat: no-repeat;
   background-size: cover;
-  width:43vw;
-  height:63vh;
-
+  width: 43vw;
+  height: 63vh;
 }
-  .flip-card-back h1{
-   font-size:20pt;
-   font-family:'Roboto Mono';
+.flip-card-back h1 {
+  font-size: 20pt;
+  font-family: "Roboto Mono";
 }
 
 .flip-card-back {
@@ -146,17 +145,22 @@ color:"white";
   color: #fff;
   transform: rotateY(180deg);
 }
-   .text-shadow{
-    position:absolute;
-    margin: 0 auto;
-	 left: 0;
-	 right: 0;
-	 text-align: center;
-   font-size: 8vh;
-	 top: 42%;
-	 text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.04), 0.125rem 0.125rem rgba(0, 0, 0, 0.04), 6px 6px rgba(0, 0, 0, 0.04), 7px 7px rgba(0, 0, 0, 0.04), 8px 8px rgba(0, 0, 0, 0.04), 9px 9px rgba(0, 0, 0, 0.04), 0.3125rem 0.3125rem rgba(0, 0, 0, 0.04), 11px 11px rgba(0, 0, 0, 0.04), 12px 12px rgba(0, 0, 0, 0.04), 13px 13px rgba(0, 0, 0, 0.04), 14px 14px rgba(0, 0, 0, 0.04), 0.625rem 0.625rem rgba(0, 0, 0, 0.04), 16px 16px rgba(0, 0, 0, 0.04), 17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04), 19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
+.text-shadow {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 8vh;
+  top: 42%;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04),
+    3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.04),
+    0.125rem 0.125rem rgba(0, 0, 0, 0.04), 6px 6px rgba(0, 0, 0, 0.04),
+    7px 7px rgba(0, 0, 0, 0.04), 8px 8px rgba(0, 0, 0, 0.04),
+    9px 9px rgba(0, 0, 0, 0.04), 0.3125rem 0.3125rem rgba(0, 0, 0, 0.04),
+    11px 11px rgba(0, 0, 0, 0.04), 12px 12px rgba(0, 0, 0, 0.04),
+    13px 13px rgba(0, 0, 0, 0.04), 14px 14px rgba(0, 0, 0, 0.04),
+    0.625rem 0.625rem rgba(0, 0, 0, 0.04), 16px 16px rgba(0, 0, 0, 0.04),
+    17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04),
+    19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
 }
-
-
-
-

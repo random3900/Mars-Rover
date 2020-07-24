@@ -297,7 +297,7 @@ function bellalgo() {
         mini > mat[i + 1][j - 1] &&
         mat[i + 1][j - 1] != -1
       ) {
-        mini = mat[i + 1][j - 1];
+        mini =mat[i + 1][j - 1];
         c = i + 1;
         d = j - 1;
       }

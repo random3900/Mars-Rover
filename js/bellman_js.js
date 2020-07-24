@@ -265,7 +265,7 @@ function bellalgo() {
     tracePath(l);
     color(xy_to_id(dest), destColor);
     var temp;
-    for (temp = 0; temp < source.length; temp++) {
+    for (temp = 0; temp < source.length-1; temp++) {
       color(source[temp], sourceColor);
     }
 

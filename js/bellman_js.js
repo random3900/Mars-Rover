@@ -1,17 +1,20 @@
+
+// const ROW = 12;
+// const COL = 12;
+// const cellColor = "#282828";
+// const sourceColor = "#76C470";
+// const destColor = "#F25050";
+// // const blockColor = "#c4f6ff";
+// const blockColor = "#393E46";
+// const traceColor = "#c4fb6d";
+// const pathColor = "#faed27";
+// var mat = [];
+// var inputType;
+// var source = [];
+// var dest;
+
 //Variables Used
-const ROW = 12;
-const COL = 12;
-const cellColor = "#282828";
-const sourceColor = "#76C470";
-const destColor = "#F25050";
-// const blockColor = "#c4f6ff";
-const blockColor = "#393E46";
-const traceColor = "#c4fb6d";
-const pathColor = "#faed27";
-var mat = [];
-var inputType;
-var source = [];
-var dest;
+
 var maxVal = ROW * COL * ROW;
 var sourceCount = 0;
 var count = 0;
@@ -22,20 +25,20 @@ window.onload = function () {
 };
                             /* Utility Functions*/
 
-//Convert XY Coordinates to Grid Cell Number
-function xy_to_id(cell) {
-  return ROW * cell.x + cell.y + 1;
-}
+// //Convert XY Coordinates to Grid Cell Number
+// function xy_to_id(cell) {
+//   return ROW * cell.x + cell.y + 1;
+// }
 
-//Convert Grid Cell Number to XY Coordinates
-function id_to_xy(id) {
-  return { x: Math.floor((id - 1) / COL), y: (id - 1) % COL };
-}
+// //Convert Grid Cell Number to XY Coordinates
+// function id_to_xy(id) {
+//   return { x: Math.floor((id - 1) / COL), y: (id - 1) % COL };
+// }
 
-//Color a Cell based on Cell Number
-function color(cellNum, color) {
-  document.getElementById(cellNum.toString()).style.backgroundColor = color;
-}
+// //Color a Cell based on Cell Number
+// function color(cellNum, color) {
+//   document.getElementById(cellNum.toString()).style.backgroundColor = color;
+// }
 
 //Initialize the Input Parameters and Auxillary Variables
 function initialize() {
@@ -60,49 +63,49 @@ function initialize() {
   
     inputType = "";
     source = [];
-    destination = undefined;
+    dest = undefined;
     count = 0;
     sourceCount = 0;
     dest = undefined;
   }
 
-//Color the Grid Cells lying on the Path(s) between Source and Destination
-function tracePath(size, path){
-    var t = 0;
+// //Color the Grid Cells lying on the Path(s) between Source and Destination
+// function tracePath(size, path){
+//     var t = 0;
 
-    while (t < size - 1) {
-      var df = xy_to_id(path[t]);
-      color(df, pathColor); //path highlighting
-      t++;
-    }
+//     while (t < size - 1) {
+//       var df = xy_to_id(path[t]);
+//       color(df, pathColor); //path highlighting
+//       t++;
+//     }
     
-}
+// }
 
                             /* UI Button Interfaces */
 
-//Interface with HTML Button - Source
-function src() {
-  inputType = "Source";
-}
+// //Interface with HTML Button - Source
+// function src() {
+//   inputType = "Source";
+// }
 
-//Interface with HTML Button - Destination
-function dst() {
-  inputType = "Destination"; 
-}
-function checkInput() {
-  if (source === undefined) {
-    return 0;
-  }
-  if (dest === undefined) {
-    return 0;
-  }
-  return 1;
-}
+// //Interface with HTML Button - Destination
+// function dst() {
+//   inputType = "Destination"; 
+// }
+// function checkInput() {
+//   if (source === undefined) {
+//     return 0;
+//   }
+//   if (dest === undefined) {
+//     return 0;
+//   }
+//   return 1;
+// }
 
-//Interface with HTML Button - Block
-function blk() {
-  inputType = "Block"; // For block inputType is equal to three
-}
+// //Interface with HTML Button - Block
+// function blk() {
+//   inputType = "Block"; // For block inputType is equal to three
+// }
 
 //Reset Input Parameters and Auxillary Variable; Interface with HTML Button - Reset
 function reset() {
@@ -327,7 +330,7 @@ function bellalgo() {
 
       kk++;
     }
-    tracePath(kk,l);
+    tracePath(l);
     f++;
   }
 }

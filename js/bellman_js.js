@@ -1,228 +1,333 @@
-var v= 0;
-
+//Variables Used
+const ROW = 12;
+const COL = 12;
+const cellColor = "#FFFFFF";
+const sourceColor = "#76C470";
+const destColor = "#F25050";
+// const blockColor = "#c4f6ff";
+const blockColor = "#393E46";
+const traceColor = "#c4fb6d";
+const pathColor = "#BBC86D";
 var mat = [];
-var d1,d2;
-var s1=[];
-var s2=[];
-var row=12,col=12;
-var ty=0;
-var te=row*col*row;
-var type=-1,count=0;
-for(var i=0; i<row; i++) {
-    mat[i] = [];
-    for(var j=0; j<col; j++) {
-        mat[i][j] = te;
-var al=i*col + j+1;
+var inputType;
+var source = [];
+var dest;
+var maxVal = ROW * COL * ROW;
+var sourceCount = 0;
+var count = 0;
+var v = 0;
 
+window.onload = function () {
+  initialize();
+};
+                            /* Utility Functions*/
+
+//Convert XY Coordinates to Grid Cell Number
+function xy_to_id(cell) {
+  return ROW * cell.x + cell.y + 1;
+}
+
+//Convert Grid Cell Number to XY Coordinates
+function id_to_xy(id) {
+  return { x: Math.floor((id - 1) / COL), y: (id - 1) % COL };
+}
+
+//Color a Cell based on Cell Number
+function color(cellNum, color) {
+  document.getElementById(cellNum.toString()).style.backgroundColor = color;
+}
+
+//Initialize the Input Parameters and Auxillary Variables
+function initialize() {
+    if (source != undefined) {
+      for (var i = 0; i < source.length; i++)
+        color(xy_to_id(source[i]), cellColor);
     }
-}
-
-function reset(){
-   s1=[];
-s2=[];
-type=-1;
-count=0;
-for(var i=0; i<row; i++) {
-var te=row*col*row;
-
-    for(var j=0; j<col; j++) {
-        mat[i][j] = te;
-var al=i*col + j+1;
-document.getElementById(al).style.backgroundColor = "WHITE";
+    if (dest != undefined) {
+      color(xy_to_id(dest), cellColor);
     }
-}
-}
-
-var p1=-1,p2=-1;
-
-function src(){
-  type=1; //For source type is equal to one
-}
-
-function dst(){
-  type=2; //For destination type is equal to two
-}
-
-function blk(){
-  type=3; // For block type is equal to three
-}
-var pre=-1;
-function reply_click(a){
-  a=Number(a);
-  var q=((a-1)/col);
-  var rem=((a-1)%col);
-  q.toFixed(0);
-  rem.toFixed(0);
-  q=parseInt(q);
-  rem=parseInt(rem);
-  if (type==1){
-   document.getElementById(a).style.backgroundColor = "#76C470"; //source
-   s1[ty]=q;
-   s2[ty]=rem;
-    ty++;
-   
-   
+    if (mat != undefined) {
+      for (i = 0; i < ROW; i++) {
+        for (j = 0; j < COL; j++) color(xy_to_id({ x: i, y: j }), cellColor);
+      }
+    }
+  
+    mat = [];
+    for (i = 0; i < ROW; i++) {
+      mat[i] = [];
+      for (j = 0; j < COL; j++) mat[i][j] = maxVal;
+    }
+  
+    inputType = "";
+    source = [];
+    destination = undefined;
+    count = 0;
+    sourceCount = 0;
+    dest = undefined;
   }
-  else if (type==2){
-   
-   
-    document.getElementById(a).style.backgroundColor = "#F25050";  //dest
-    d1=q;
-    d2=rem;
-    mat[d1][d2]=0;
-    if (pre!=-1){
-document.getElementById(pre).style.backgroundColor = "WHITE";
-mat[p1][p2]=te;
+
+//Color the Grid Cells lying on the Path(s) between Source and Destination
+function tracePath(size, path){
+    var t = 0;
+
+    while (t < size - 1) {
+      var df = xy_to_id(path[t]);
+      color(df, pathColor); //path highlighting
+      t++;
+    }
+    
 }
-    else{ p1=d1;
-p2=d2;
+
+                            /* UI Button Interfaces */
+
+//Interface with HTML Button - Source
+function src() {
+  inputType = "Source";
 }
-   
-    pre=a;
-    p1=d1;
-    p2=d2;
-   
-   
-   
-   
+
+//Interface with HTML Button - Destination
+function dst() {
+  inputType = "Destination"; 
+}
+function checkInput() {
+  if (source === undefined) {
+    return 0;
   }
-  else if (type==3){
-    document.getElementById(a).style.backgroundColor = "#393E46"; //blocks
-    mat[q][rem]=-1;
- 
+  if (dest === undefined) {
+    return 0;
   }
-  else{
-   
+  return 1;
+}
+
+//Interface with HTML Button - Block
+function blk() {
+  inputType = "Block"; // For block inputType is equal to three
+}
+
+//Reset Input Parameters and Auxillary Variable; Interface with HTML Button - Reset
+function reset() {
+    initialize();
+}
+
+//Interface with HTML Grid Cell onClick()
+function reply_click(a) {
+  a = Number(a);
+  var pt = id_to_xy(a);
+  if (inputType === "Source") {
+    var i,
+      duplicateSourcePos = -1;
+    for (i = 0; i < source.length; i++) {
+      if (source[i].x === pt.x && source[i].y === pt.y) {
+        duplicateSourcePos = i;
+        source[i] = {};
+        color(a, cellColor);
+      }
+    }
+    source = source.filter((value) => Object.keys(value).length !== 0);
+
+    if (duplicateSourcePos != -1) {
+      sourceCount--;
+      return;
+    }
+    color(a, sourceColor);
+    source[sourceCount] = pt;
+    sourceCount++;
+  } else if (inputType === "Destination") {
+    if(dest!== undefined){
+        if(dest.x===pt.x&&dest.y===pt.y){
+            dest = undefined;
+            color(a,cellColor);
+            mat[pt.x][pt.y] = maxVal;
+            return;
+        }
+        else{
+            color(xy_to_id(dest),cellColor);
+            mat[dest.x][dest.y]= maxVal;
+        }
+    }
+    
+    color(a, destColor); //dest
+    dest = pt;
+    mat[pt.x][pt.y] = 0;
+
+  } else if (inputType === "Block") {
+    color(a, blockColor); //blocks
+    mat[pt.x][pt.y] = -1;
+  } else {
   }
 }
 
-function initi(c,d,mat){
-    var flag=0;
-    var temp=mat[c][d];
-    var mini=temp;
- 
-    if (c+1<row && mat[c+1][d]!=-1 ){
-        mini=Math.min(mat[c][d],mat[c+1][d]+1,mini);}
-       
-    if (d+1<col && mat[c][d+1]!=-1){
-        mini=Math.min(mat[c][d],mat[c][d+1]+1,mini);}
-           
-    if (d-1>=0 && mat[c][d-1]!=-1){
-        mini=Math.min(mat[c][d-1]+1,mat[c][d],mini);}
-           
-    if (c-1>=0 && mat[c-1][d]!=-1){
-        mini=Math.min(mat[c-1][d]+1,mat[c][d],mini);}
+                            /* Path Finding Logic */
+                            
+//Utility function for Bellman Ford Algorithm
+function initi(c, d, mat) {
+  var flag = 0;
+  var temp = mat[c][d];
+  var mini = temp;
 
-    if (c+1<row && d+1<col && mat[c+1][d+1]!=-1){
-        mini=Math.min(mat[c+1][d+1]+1,mat[c][d],mini);}
+  if (c + 1 < ROW && mat[c + 1][d] != -1) {
+    mini = Math.min(mat[c][d], mat[c + 1][d] + 1, mini);
+  }
 
-    if (c-1>=0 && d+1<col && mat[c-1][d+1]!=-1){
-        mini=Math.min(mat[c-1][d+1]+1,mat[c][d],mini);}
+  if (d + 1 < COL && mat[c][d + 1] != -1) {
+    mini = Math.min(mat[c][d], mat[c][d + 1] + 1, mini);
+  }
 
-    if (c+1<row && d-1>=0 && mat[c+1][d-1]!=-1){
-        mini=Math.min(mat[c+1][d-1]+1,mat[c][d],mini);}
+  if (d - 1 >= 0 && mat[c][d - 1] != -1) {
+    mini = Math.min(mat[c][d - 1] + 1, mat[c][d], mini);
+  }
 
-    if (c-1>=0 && d-1>=0 && mat[c-1][d-1]!=-1){
-        mini=Math.min(mat[c-1][d-1]+1,mat[c][d],mini);}
-    if (temp>mini){
-        flag=1;
-        mat[c][d]=mini;}
-       
-    return flag;
+  if (c - 1 >= 0 && mat[c - 1][d] != -1) {
+    mini = Math.min(mat[c - 1][d] + 1, mat[c][d], mini);
+  }
 
+  if (c + 1 < ROW && d + 1 < COL && mat[c + 1][d + 1] != -1) {
+    mini = Math.min(mat[c + 1][d + 1] + 1, mat[c][d], mini);
+  }
+
+  if (c - 1 >= 0 && d + 1 < COL && mat[c - 1][d + 1] != -1) {
+    mini = Math.min(mat[c - 1][d + 1] + 1, mat[c][d], mini);
+  }
+
+  if (c + 1 < ROW && d - 1 >= 0 && mat[c + 1][d - 1] != -1) {
+    mini = Math.min(mat[c + 1][d - 1] + 1, mat[c][d], mini);
+  }
+
+  if (c - 1 >= 0 && d - 1 >= 0 && mat[c - 1][d - 1] != -1) {
+    mini = Math.min(mat[c - 1][d - 1] + 1, mat[c][d], mini);
+  }
+  if (temp > mini) {
+    flag = 1;
+    mat[c][d] = mini;
+  }
+
+  return flag;
 }
 
+//Bellman Ford Algorithm
+function bellalgo() {
+  if (!checkInput()) {
+    console.log("invalid input");
+    return;
+  }
+  inputType = "";
+  count = 0;
+  var k = 0,
+    v = 8 * ROW * COL * COL * ROW;
+  while (k < v) {
+    flag = 0;
 
+    for (i = dest.x; i < ROW; i++) {
+      for (j = dest.y; j < COL; j++) {
+        if (mat[i][j] != -1) {
+          flag = Math.max(flag, initi(i, j, mat));
+        }
+      }
+    }
 
-
-function bellalgo(){
-  type=-1;
-  count=0;
-  var k=0,v=8*row*col*row*col;
-while(k<v){
-flag=0;
-    for (i=d1;i<row;i++){
-        for (j=d2;j<col;j++){
-            if (mat[i][j]!=-1){
-                flag=Math.max(flag,initi(i,j,mat))}}}
-
-    for (i=d1;i<row;i++){
-        for (j=d2;j>=0;j--){
-            if (mat[i][j]!=-1){
-                flag=Math.max(flag,initi(i,j,mat))}}}
-    for (i=d1;i>=0;i--){
-        for (j=d2;j<col;j++){
-            if (mat[i][j]!=-1){
-                flag=Math.max(flag,initi(i,j,mat))}}}
-    for (i=d1;i>=0;i--){
-        for (j=d2;j>=0;j--){
-            if (mat[i][j]!=-1){
-                flag=Math.max(flag,initi(i,j,mat))}}}
-    if (flag==0){
-    break;
+    for (i = dest.x; i < ROW; i++) {
+      for (j = dest.y; j >= 0; j--) {
+        if (mat[i][j] != -1) {
+          flag = Math.max(flag, initi(i, j, mat));
+        }
+      }
+    }
+    for (i = dest.x; i >= 0; i--) {
+      for (j = dest.y; j < COL; j++) {
+        if (mat[i][j] != -1) {
+          flag = Math.max(flag, initi(i, j, mat));
+        }
+      }
+    }
+    for (i = dest.x; i >= 0; i--) {
+      for (j = dest.y; j >= 0; j--) {
+        if (mat[i][j] != -1) {
+          flag = Math.max(flag, initi(i, j, mat));
+        }
+      }
+    }
+    if (flag === 0) {
+      break;
     }
     k++;
+  }
+  var f = 0;
+  while (f < sourceCount) {
+    l = [];
+    var i = source[f].x;
+    var j = source[f].y,
+      kk = 0;
+    var c, d;
+    while (!(i === dest.x && j === dest.y)) {
+      mini = ROW * COL + 1;
 
-}
- var f=0;
-  while(f<ty){
- 
-  l1=[]
-l2=[]
-var i=s1[f];
-var j=s2[f],kk=0;
-while(!(i==d1 && j==d2)){
-    mini=(row*col)+1;
-    if (i+1<row && mat[i+1][j]!=-1){
-        mini=mat[i+1][j];
-        c=i+1;
-        d=j;}
-    if (j+1<col && mini>mat[i][j+1] && mat[i][j+1]!=-1){
-        mini=mat[i][j+1];
-        c=i;
-        d=j+1;}
-    if (i-1>=0 && mini>mat[i-1][j] && mat[i-1][j]!=-1){
-        mini=mat[i-1][j];
-        c=i-1;
-        d=j;}
-    if (j-1>=0 && mini>mat[i][j-1] && mat[i][j-1]!=-1){
-        mini=mat[i][j-1];
-        c=i;
-        d=j-1;}
-    if (i+1<row && j+1<col && mini>mat[i+1][j+1] && mat[i+1][j+1]!=-1)        {
-        mini=mat[i+1][j+1];
-        c=i+1;
-        d=j+1;}
-    if (i+1<row && j-1>=0 && mini>mat[i+1][j-1] && mat[i+1][j-1]!=-1){
-        mini=mat[i+1][j-1];
-        c=i+1;
-        d=j-1;}
-    if (i-1>=0 && j+1<col && mini>mat[i-1][j+1] && mat[i-1][j+1]!=-1){
-        mini=mat[i-1][j+1];
-        c=i-1;
-        d=j+1;}
-    if (i-1>=0 && j-1>=0 && mini>mat[i-1][j-1] && mat[i-1][j-1]!=-1){
-        mini=mat[i-1][j-1];
-        c=i-1;
-        d=j-1;}
-    i=c;
-    j=d;
-    l1[kk]=i;
-    l2[kk]=j;
-    kk++;
+      if (i + 1 < ROW && mat[i + 1][j] != -1) {
+        mini = mat[i + 1][j];
+        c = i + 1;
+        d = j;
+      }
+      if (j + 1 < COL && mini > mat[i][j + 1] && mat[i][j + 1] != -1) {
+        mini = mat[i][j + 1];
+        c = i;
+        d = j + 1;
+      }
+      if (i - 1 >= 0 && mini > mat[i - 1][j] && mat[i - 1][j] != -1) {
+        mini = mat[i - 1][j];
+        c = i - 1;
+        d = j;
+      }
+      if (j - 1 >= 0 && mini > mat[i][j - 1] && mat[i][j - 1] != -1) {
+        mini = mat[i][j - 1];
+        c = i;
+        d = j - 1;
+      }
+      if (
+        i + 1 < ROW &&
+        j + 1 < COL &&
+        mini > mat[i + 1][j + 1] &&
+        mat[i + 1][j + 1] != -1
+      ) {
+        mini = mat[i + 1][j + 1];
+        c = i + 1;
+        d = j + 1;
+      }
+      if (
+        i + 1 < ROW &&
+        j - 1 >= 0 &&
+        mini > mat[i + 1][j - 1] &&
+        mat[i + 1][j - 1] != -1
+      ) {
+        mini = mat[i + 1][j - 1];
+        c = i + 1;
+        d = j - 1;
+      }
+      if (
+        i - 1 >= 0 &&
+        j + 1 < COL &&
+        mini > mat[i - 1][j + 1] &&
+        mat[i - 1][j + 1] != -1
+      ) {
+        mini = mat[i - 1][j + 1];
+        c = i - 1;
+        d = j + 1;
+      }
+      if (
+        i - 1 >= 0 &&
+        j - 1 >= 0 &&
+        mini > mat[i - 1][j - 1] &&
+        mat[i - 1][j - 1] != -1
+      ) {
+        mini = mat[i - 1][j - 1];
+        c = i - 1;
+        d = j - 1;
+      }
+      i = c;
+      j = d;
+      l[kk] = { x: i, y: j };
 
-}
- 
-  var t=0;
- 
-while(t<kk-1){
-  var df=l1[t]*col + (l2[t]+1);
-  df=df.toString();
-document.getElementById(df).style.backgroundColor = "#BBC86D"; //path highlighting
-    t++;
-}
+      kk++;
+    }
+    tracePath(kk,l);
     f++;
- 
- 
   }
 }

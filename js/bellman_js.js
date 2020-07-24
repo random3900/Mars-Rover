@@ -1,7 +1,7 @@
 //Variables Used
 const ROW = 12;
 const COL = 12;
-onst cellColor = "#282828";
+const cellColor = "#282828";
 const sourceColor = "#76C470";
 const destColor = "#F25050";
 const blockColor = "#c4f6ff";

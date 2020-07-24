@@ -7,44 +7,43 @@ var v = 0;
 window.onload = function () {
   initialize();
 };
-                            /* Utility Functions*/
+/* Utility Functions*/
 
 //Initialize the Input Parameters and Auxillary Variables
 function initialize() {
-    setVisibility("");
-    if (source != undefined) {
-      for (var i = 0; i < source.length; i++)
-        color(xy_to_id(source[i]), cellColor);
-    }
-    if (dest != undefined) {
-      color(xy_to_id(dest), cellColor);
-    }
-    if (mat != undefined) {
-      for (i = 0; i < ROW; i++) {
-        for (j = 0; j < COL; j++) color(xy_to_id({ x: i, y: j }), cellColor);
-      }
-    }
-  
-    mat = [];
+  setVisibility("");
+  if (source != undefined) {
+    for (var i = 0; i < source.length; i++)
+      color(xy_to_id(source[i]), cellColor);
+  }
+  if (dest != undefined) {
+    color(xy_to_id(dest), cellColor);
+  }
+  if (mat != undefined) {
     for (i = 0; i < ROW; i++) {
-      mat[i] = [];
-      for (j = 0; j < COL; j++) mat[i][j] = maxVal;
+      for (j = 0; j < COL; j++) color(xy_to_id({ x: i, y: j }), cellColor);
     }
-  
-    inputType = "";
-    source = [];
-    dest = undefined;
-    count = 0;
-    sourceCount = 0;
-    dest = undefined;
   }
 
+  mat = [];
+  for (i = 0; i < ROW; i++) {
+    mat[i] = [];
+    for (j = 0; j < COL; j++) mat[i][j] = maxVal;
+  }
 
-                            /* UI Button Interfaces */
+  inputType = "";
+  source = [];
+  dest = undefined;
+  count = 0;
+  sourceCount = 0;
+  dest = undefined;
+}
+
+/* UI Button Interfaces */
 
 //Reset Input Parameters and Auxillary Variable; Interface with HTML Button - Reset
 function reset() {
-    initialize();
+  initialize();
 }
 
 //Interface with HTML Grid Cell onClick()
@@ -71,23 +70,21 @@ function reply_click(a) {
     source[sourceCount] = pt;
     sourceCount++;
   } else if (inputType === "Destination") {
-    if(dest!== undefined){
-        if(dest.x===pt.x&&dest.y===pt.y){
-            dest = undefined;
-            color(a,cellColor);
-            mat[pt.x][pt.y] = maxVal;
-            return;
-        }
-        else{
-            color(xy_to_id(dest),cellColor);
-            mat[dest.x][dest.y]= maxVal;
-        }
+    if (dest !== undefined) {
+      if (dest.x === pt.x && dest.y === pt.y) {
+        dest = undefined;
+        color(a, cellColor);
+        mat[pt.x][pt.y] = maxVal;
+        return;
+      } else {
+        color(xy_to_id(dest), cellColor);
+        mat[dest.x][dest.y] = maxVal;
+      }
     }
-    
+
     color(a, destColor); //dest
     dest = pt;
     mat[pt.x][pt.y] = 0;
-
   } else if (inputType === "Block") {
     color(a, blockColor); //blocks
     mat[pt.x][pt.y] = -1;
@@ -95,8 +92,8 @@ function reply_click(a) {
   }
 }
 
-                            /* Path Finding Logic */
-                            
+/* Path Finding Logic */
+
 //Utility function for Bellman Ford Algorithm
 function initi(c, d, mat) {
   var flag = 0;
@@ -262,18 +259,16 @@ function bellalgo() {
       i = c;
       j = d;
 
-      var temp;
-      for(temp = 0; temp<source.length;temp++){
-        if(source[temp].x === i && source[temp].y === j){
-          break;
-        }
-      }
-      if(temp === source.length){
-        l[kk] = { x: i, y: j };
-        kk++;
-      }
+      l[kk] = { x: i, y: j };
+      kk++;
     }
     tracePath(l);
+    color(xy_to_id(dest), destColor);
+    var temp;
+    for (temp = 0; temp < source.length; temp++) {
+      color(source[temp], sourceColor);
+    }
+
     f++;
   }
 }

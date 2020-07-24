@@ -1,3 +1,4 @@
+//Initialize variables
 var v=-1;
 var flag1,flag2;
 var mat = [];
@@ -5,12 +6,6 @@ var cost=[];
 var visited=[];
 var Queuex=[];
 var Queuey=[];
-// Queuex.push(1);
-// Queuey.push(2);
-
-// console.log(Queuex.shift());
-// console.log(Queuey.shift());
-// console.log(Queuex.length);
 
 var s1,s2,d1,d2;//source and destination
 var n=12;
@@ -26,28 +21,29 @@ for(var i=0; i<n; i++) {
     }
 }
 console.log(mat);
-
+//Reset Input Parameters and Auxillary Variable; Interface with //HTML Button - Reset
 function refresh(){
     location.reload();
 }
-
+//Interface with HTML Button - Source
 function source(){
 v=0;
 flag1=1;
 }
-
+//Interface with HTML Button - Destination
 function destination(){
         prev=-1;
         flag1=0;
 v=1;
 flag2=1;
 }
-
+//Interface with HTML Button - Block
 function block(){
         flag2=0;
 v=2;
 }
 
+//Interface with HTML Grid Cell onClick()
 function reply_click(a){
     a=Number(a);
     var q=((a-1)/n);
@@ -103,6 +99,8 @@ else{
     }
    
   }
+// A Utility Function to check whether the given cell is 
+// blocked or not 
 function isvalid(x,y){
     if(x<0 || y<0 ||x>=n ||y>=n)
     {
@@ -113,6 +111,7 @@ function isvalid(x,y){
     }
     return 1;
 }
+//Function to recursively find the path from the Source to the Destination
 function recurGo(){
     if(Queuex.length==0)
         return;
@@ -191,6 +190,7 @@ function recurGo(){
 
 
 }
+// Utilty Function highlight the path traced
 function highlight(matrix, x1, y1, x2, y2){
     var previousValue = matrix[x2][y2];
     var successfulRoute = [];
@@ -229,6 +229,7 @@ function highlight(matrix, x1, y1, x2, y2){
     return successfulRoute;
 
 }
+//Main function of the Algorithm
 function Lee(){
     v=-1;
     Queuex.push(s1);
@@ -243,7 +244,7 @@ function Lee(){
     }
    
    
-    //write the numbers
+    //Write the Numbers
     for(i=0;i<n;i++){
         for(j=0;j<n;j++){
             if(cost[i][j]!=-1){
@@ -259,7 +260,7 @@ function Lee(){
                  
         }
     }
-    //highlight path
+    //Highlight Path
     h=highlight(cost,s1,s2,d1,d2)
     for(i=1;i<h.length-1;i++){
        curx=h[i][0];
@@ -271,6 +272,6 @@ function Lee(){
          idx.style.backgroundColor="#BBC86D";
 
    }
-    var tc=cost[d1][d2];//target cost
+    var tc=cost[d1][d2];//Target Cost
    
 }

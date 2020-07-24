@@ -15,7 +15,7 @@ html {
   /* The image used */
   background-image: url("https://wallpaperplay.com/walls/full/d/b/e/155006.jpg");
 
-  /* Add the blur effect */
+
 
   /* Full height */
   height: 100%;
@@ -26,7 +26,7 @@ html {
   background-size: cover;
 }
 
-/* Position text in the middle of the page/image */
+/* Animation For the button Powered by GIT */
 
 #git {
   position: fixed;
@@ -53,12 +53,19 @@ html {
   transform: translateX(-100%) skewX(-45deg);
   transition: transform 0.5s;
 }
+
+/* The colour change while you hover*/
+
 #git:hover {
   color: #fff;
 }
+/* Actual code that brings Animation*/
 #git:hover:before {
   transform: translateX(0) skewX(-45deg);
 }
+
+
+/* Animation for the button Guide Mars Rover*/
 
 button {
   font-size: 15pt;

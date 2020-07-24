@@ -2,11 +2,12 @@
 const ROW = 12;
 const COL = 12;
 const cellColor = "#282828";
-const sourceColor = "#76C470";
+const sourceColor = "GREEN";
 const destColor = "#F25050";
-const blockColor = "#c4f6ff";
+// const blockColor = "#c4f6ff";
+const blockColor = "#393E46";
 const traceColor = "#c4fb6d";
-const pathColor = "#faed27";
+const pathColor = "#BBC86D";
 var mat = [];
 var inputType;
 var source = [];

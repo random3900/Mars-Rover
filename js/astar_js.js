@@ -59,12 +59,12 @@ function reply_click(a1) {
       p1 = Math.floor((a1 - 1) / 12);
       p2 = Math.floor((a1 - 1) / 12);
     } else {
-      document.getElementById(prev).style.backgroundColor = "WHITE";
+      document.getElementById(prev).style.backgroundColor = "#282828";
       prev = a1;
       p1 = Math.floor((a1 - 1) / 12);
       p2 = Math.floor((a1 - 1) / 12);
     }
-    document.getElementById(a1).style.backgroundColor = "GREEN";
+    document.getElementById(a1).style.backgroundColor = "#76C470";
     source = { first: Math.floor((a1 - 1) / 12), second: (a1 - 1) % 12 };
   } else if (type == 2 && flag2 == 1) {
     if (prev == -1) {

@@ -91,7 +91,7 @@ aside {
 }
 
 .flip-card-front,
-.flip-card-back {
+.flip-card-back,.flip-card-front-bell  {
   position: absolute;
   width: 100%;
   height: 100%;

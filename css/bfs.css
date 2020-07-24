@@ -104,14 +104,15 @@ aside {
   /* background-color: #bbb; */
   color: white;
   padding: 5px;
-  background-image: url(https://media0.giphy.com/media/XBpUGMmoGM4DVHoRMZ/source.gif) ;
   background-repeat: no-repeat;
   background-size: cover;
   width:45vw;
   height:50vh;
 
 }
-
+.bfs{
+  background-image: url(https://media0.giphy.com/media/XBpUGMmoGM4DVHoRMZ/source.gif) ;
+}
 .bell {
   /* background-color: #bbb; */
   background-image: image("../gifs/lee.gif") ;

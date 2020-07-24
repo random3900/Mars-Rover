@@ -11,6 +11,7 @@ window.onload = function () {
 
 //Initialize the Input Parameters and Auxillary Variables
 function initialize() {
+    setVisibility("");
     if (source != undefined) {
       for (var i = 0; i < source.length; i++)
         color(xy_to_id(source[i]), cellColor);

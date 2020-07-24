@@ -75,19 +75,19 @@ function tracePath(path) {
 
 //Interface with HTML Button - Source
 function source_fn() {
-//   setVisibility("src");
+  setVisibility("src");
   inputType = "Source";
 }
 
 //Interface with HTML Button - Destination
 function destination() {
-//   setVisibility("dest");
+  setVisibility("dest");
   inputType = "Destination";
 }
 
 //Interface with HTML Button - Block
 function block_fn() {
-//   setVisibility("block");
+  setVisibility("block");
   inputType = "Block";
 }
 

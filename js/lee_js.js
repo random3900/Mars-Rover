@@ -60,7 +60,7 @@ function reply_click(a){
   p2=rem;
 }
 else{
-  document.getElementById(prev).style.backgroundColor="WHITE";
+  document.getElementById(prev).style.backgroundColor="#282828";
   prev=a;
   p1=q;
   p2=rem;
@@ -78,7 +78,7 @@ if (prev==-1){
   p2=rem;
 }
 else{
-  document.getElementById(prev).style.backgroundColor="WHITE";
+  document.getElementById(prev).style.backgroundColor="#282828";
   mat[p1][p2]=0;
   prev=a;
   p1=q;

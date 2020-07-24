@@ -2,75 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AStar Algorithm</title>
+    <link rel="stylesheet" href="../css/bfs.css" />
 
-    <title>A* Algorithm</title>
-    <link rel="stylesheet" href="/css/astar_css.css" >
+    <!--CSS-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-  <aside>    
-   <div class="container1" style="position: absolute">
-   <div class="grid1"> 
-     <div class="flip">
-       <div class="front" style="background-image:  url(https://media1.tenor.com/images/137741c879c4be334f000b7bf17f6103/tenor.gif); width:500px;height:250px">
-      <h1 class="text-shadow">A* Algorithm</h1>
-    </div>
-    <div class="back">
-       
-        <h3>UNIQUENESS:</h3>
-        <p>Single source- Double Destinations</p>
-      <h3>STEPS TO ATTAIN RESULT:</h3>
-      <p>(i) Click the SOURCE button and select the cell you wish  <br>the source to be.<br><br>
-         (ii) Then,click the DESTINATION1 button and choose one cell.<br><br>
-         (iii) Then,click the DESTINATION2 button and choose one cell.<br><br>
-         (iv) Click BLOCKS button to choose blocks in the grid. <br><br>
-         (v) By default Euclidean with weight one is chosen. <br><br>
-         (vi) By entering weight in the box you can change the<br> weight and can change the type by clicking manhattan.<br><br>
-         (vii) Click START button. The resulting path will appear.</p>
-    </div>
-</div>
-</div>
-  </div>
-    
-      <button
-        type="button"
-        onclick="src()"
-        class="button1">
-        SOURCE
-      </button>
-  
-      <button type="button" onclick="dst()" class="button2" >
-        DESTINATION 1
-      </button>
-     
-      <button type="button" onclick="dst1()" class="button3" >
-        DESTINATION 2
-      </button>
-      
-      <br />
-      <form>
-  <label for="weight">Weight:</label>
-         <input type="text" id="weight" name="weight"><br>
-      </form>
-       
-      <button type="button" onclick="heuristics(weight)" class="button5">
-        EUCLIDIAN
-      </button> 
-    <button type="button" onclick="heuristics1(weight)" class="button6">
-        MANHATTAN
-      </button> 
-      <br />
-      <button type="button" onclick="blk()" class="button7">
-        BLOCKS
-      </button>
-    
-      <button type="button" onclick="start()" class="button8">START</button>
-      
-      <button type="button" onclick="reset()" class="button9">RESET</button>
-      <a href="Dashboard_html.html"><button type="button"  class="button10">BACK</button></html> </a>
-    </aside>
-    <section calss="left">
-      <div class="container">
-        <div class="grid">
+    <!-- <header>
+      <p>Mars Rover</p>
+    </header> -->
+
+    <section class="left" style="display: inline-block;">
+      <div class="ct">
+        <div class="gd">
           <div class="cell" id="1" onclick="reply_click(this.id)"></div>
           <div class="cell" id="2" onclick="reply_click(this.id)"></div>
           <div class="cell" id="3" onclick="reply_click(this.id)"></div>
@@ -218,6 +169,98 @@
         </div>
       </div>
     </section>
-    <script src="/js/astar_js.js"></script>
+
+    <aside>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="fcf-astar">
+            <h1 class="text-shadow">BFS Algorithm</h1>
+          </div>
+          <div class="flip-card-back">
+            <h3>UNIQUENESS:</h3>
+            <p>Single source- Double Destinations</p>
+            <h3>STEPS TO ATTAIN RESULT:</h3>
+            <p>
+              (i) Click the SOURCE button and select the cell you wish <br />the
+              source to be.<br /><br />
+              (ii) Then,click the DESTINATION1 button and choose one cell.<br /><br />
+              (iii) Then,click the DESTINATION2 button and choose one cell.<br /><br />
+              (iv) Click BLOCKS button to choose blocks in the grid.
+              <br /><br />
+              (v) By default Euclidean with weight one is chosen. <br /><br />
+              (vi) By entering weight in the box you can change the<br />
+              weight and can change the type by clicking manhattan.<br /><br />
+              (vii) Click START button. The resulting path will appear.
+            </p>
+          </div>
+        </div>
+        <!-- <button class="btn btn-dark btn-outline-success" onclick="source_fn()">
+          Source
+        </button>
+        <button class="btn btn-dark btn-outline-success" onclick="destination()">
+          Destination
+        </button>
+        <button class="btn btn-dark btn-outline-success" onclick="block_fn()">
+          Block
+        </button>
+        <button class="btn btn-dark btn-outline-success" onclick="findPath()">
+          Find Path
+        </button>
+        <button class="btn btn-dark btn-outline-success" onclick="initialize()">Reset</button>
+        <a href="../html/Dashboard_html.html">
+        <button class="btn btn-dark btn-outline-success" onclick="initialize()">Back</button>
+         </a> -->
+        <button class="btn btn-dark btn-outline-primary" onclick="src()">
+          SOURCE
+        </button>
+
+        <button class="btn btn-dark btn-outline-primary" onclick="dst()">
+          DESTINATION 1
+        </button>
+
+        <button class="btn btn-dark btn-outline-primary" onclick="dst1()">
+          DESTINATION 2
+        </button>
+
+        <form>
+          <label for="weight">Weight:</label>
+          <input type="text" id="weight" name="weight" /><br />
+        </form>
+
+        <button
+          class="btn btn-dark btn-outline-primary"
+          onclick="heuristics(weight)"
+        >
+          EUCLIDIAN
+        </button>
+        <button
+          class="btn btn-dark btn-outline-primary"
+          onclick="heuristics1(weight)"
+        >
+          MANHATTAN
+        </button>
+        <button class="btn btn-dark btn-outline-primary" onclick="blk()">
+          BLOCKS
+        </button>
+
+        <button class="btn btn-dark btn-outline-primary" onclick="start()">
+          START
+        </button>
+
+        <button class="btn btn-dark btn-outline-primary" onclick="reset()">
+          RESET
+        </button>
+        <a>
+          <button
+            class="btn btn-dark btn-outline-primary"
+            onclick="initialize()"
+          >
+            Back
+          </button>
+        </a>
+      </div>
+    </aside>
+    <script src="../js/astar_js.js"></script>
+    <!-- <script src="astar.js"></script> -->
   </body>
 </html>

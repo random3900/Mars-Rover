@@ -72,7 +72,7 @@ aside {
   float: right;
   font-family: "Roboto Mono","sans-serif";
   font-size: 0.8em;
-  
+  color: white;
 }
 
 .flip-card-inner {
@@ -85,13 +85,14 @@ aside {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding-bottom: 6vh;
   margin-bottom: 3vh;
+  
 }
 
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-.fcf-bell,.fcf-bfs,.fcf-lee,
+.fcf-bell,.fcf-bfs,.fcf-lee,.fcf-astar,
 .flip-card-back{
   position: absolute;
   width: 100%;
@@ -102,11 +103,22 @@ aside {
  
 }
 
+.fcf-astar {
+  /* background-color: #bbb; */
+  color: white;
+  padding: 5px;
+  background-image: url(../gifs/astar.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:45vw;
+  height:65vh;
+
+}
 .fcf-bfs {
   /* background-color: #bbb; */
   color: white;
   padding: 5px;
-  background-image: url(https://media0.giphy.com/media/XBpUGMmoGM4DVHoRMZ/source.gif) ;
+  background-image: url(../gifs/bell.gif) ;
   background-repeat: no-repeat;
   background-size: cover;
   width:45vw;

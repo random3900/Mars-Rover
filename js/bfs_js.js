@@ -93,16 +93,12 @@ function setCell(cellNumber) {
         color(cellNumber, sourceColor);
         color(xy_to_id(source), cellColor);
         source = id_to_xy(cellNumber);
-        inputType = "Destination";
-        setVisibility("dest");
         return;
       }
     } else {
       free(cellNumber);
       color(cellNumber, sourceColor);
       source = id_to_xy(cellNumber);
-      inputType = "Destination";
-      setVisibility("dest");
       return;
     }
   }
@@ -130,16 +126,12 @@ function setCell(cellNumber) {
         color(cellNumber, destColor);
         color(xy_to_id(dest), cellColor);
         dest = id_to_xy(cellNumber);
-        inputType = "Block";
-        setVisibility("block");
         return;
       }
     } else {
       free(cellNumber);
       color(cellNumber, destColor);
       dest = id_to_xy(cellNumber);
-      inputType = "Block";
-      setVisibility("block");
       return;
     }
   }

@@ -97,6 +97,8 @@ aside {
   color: black;
   padding: 5px;
   background-image: url(https://media0.giphy.com/media/XBpUGMmoGM4DVHoRMZ/source.gif);
+  width:500px;
+  height:300px
 }
 
 .flip-card-back {

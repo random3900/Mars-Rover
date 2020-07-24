@@ -113,16 +113,13 @@ aside {
 
 }
 
-.flip-card-front-bell {
+.bell {
   /* background-color: #bbb; */
-  color: white;
-  padding: 5px;
-  background-image: url(https://github.com/random3900/random3900.github.io/blob/master/gifs/bfs.gif) ;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width:45vw;
-  height:50vh;
+  background-image: image("../gifs/lee.gif") ;
+}
 
+.lee{
+background-image: url("https://media.indiedb.com/images/articles/1/267/266828/DezzanGif5-min.gif");
 }
 
 .flip-card-back {

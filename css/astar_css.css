@@ -215,10 +215,14 @@ body{
 	.button9 {
 	   left: 73.5rem;
 	   width:7vw;
-	   top:90vh;
+	   top:80vh;
 	}
 	
-	
+	.button10{
+	top:90vh;
+        left: 62rem;
+	width:18vw;
+}
 	
 	form{
 	  font-size:15pt;

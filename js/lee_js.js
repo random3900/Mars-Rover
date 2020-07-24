@@ -93,7 +93,7 @@ else{
      
     }
     else if(v>=2){
-      document.getElementById(a).style.backgroundColor = "#393E46"; //blocks
+      document.getElementById(a).style.backgroundColor = "#c4f6ff"; //blocks
       mat[q][rem]=-1;//-1 for obstacle
       v++;
     }
@@ -269,7 +269,7 @@ function Lee(){
        nCalc=Number(nCalc);
  
          var idx=document.getElementById(nCalc);
-         idx.style.backgroundColor="#BBC86D";
+         idx.style.backgroundColor="#faed27";
 
    }
     var tc=cost[d1][d2];//Target Cost

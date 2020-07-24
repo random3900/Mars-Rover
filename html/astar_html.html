@@ -1,222 +1,47 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-
-    <title>Mars Mission</title>
-    <link rel="stylesheet" href="../css/astar_css.css" />
-  </head>
-  <body>
-  <aside>    
-   <div class="container1" style="position: absolute">
-   <div class="grid1"> 
-     <div class="flip">
-       <div class="front" style="background-image:  url(https://media1.tenor.com/images/137741c879c4be334f000b7bf17f6103/tenor.gif); width:500px;height:250px">
-      <h1 class="text-shadow">A* Algorithm</h1>
-    </div>
-    <div class="back">
-       
-        <h3>UNIQUENESS:</h3>
-        <p>Single source- Double Destinations</p>
-      <h3>STEPS TO ATTAIN RESULT:</h3>
-      <p>(i) Click the SOURCE button and select the cell you wish  the source to be.</p>
-      <p>(ii) Then,click the DESTINATION1 button and choose one cell.</p>
-      <p>(iii) Then,click the DESTINATION2 button and choose one cell.</p>
-      <p>(iii) Click BLOCKS button to choose blocks in the grid. </p>
-      <p> (iv) By default Euclidean with weight one is chosen. </p>
-      <p> (v) By entering weight in the box you can change the weight and <br> can change the type by clicking manhattan.
-        <p>(vi) Click START button. The resulting path will appear.</p>
-    </div>
-</div>
-</div>
-  </div>
-    
-      <button
-        type="button"
-        onclick="src()"
-        class="button1">
-        SOURCE
-      </button>
-  
-      <button type="button" onclick="dst()" class="button2" >
-        DESTINATION 1
-      </button>
-     
-      <button type="button" onclick="dst1()" class="button3" >
-        DESTINATION 2
-      </button>
-      
-      <br />
-      <form>
-  <label for="weight">Weight:</label>
-         <input type="text" id="weight" name="weight"><br>
-      </form>
-       
-      <button type="button" onclick="heuristics(weight)" class="button5">
-        EUCLIDIAN
-      </button> 
-    <button type="button" onclick="heuristics1(weight)" class="button6">
-        MANHATTAN
-      </button> 
-      <br />
-      <button type="button" onclick="blk()" class="button7">
-        BLOCKS
-      </button>
-    
-      <button type="button" onclick="start()" class="button8">START</button>
-      
-      <button type="button" onclick="reset()" class="button9">RESET</button>
-    </aside>
-    <section calss="left">
-      <div class="container">
-        <div class="grid">
-          <div class="cell" id="1" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="2" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="3" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="4" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="5" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="6" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="7" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="8" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="9" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="10" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="11" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="12" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="13" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="14" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="15" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="16" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="17" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="18" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="19" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="20" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="21" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="22" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="23" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="24" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="25" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="26" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="27" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="28" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="29" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="30" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="31" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="32" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="33" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="34" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="35" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="36" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="37" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="38" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="39" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="40" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="41" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="42" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="43" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="44" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="45" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="46" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="47" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="48" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="49" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="50" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="51" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="52" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="53" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="54" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="55" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="56" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="57" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="58" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="59" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="60" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="61" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="62" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="63" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="64" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="65" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="66" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="67" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="68" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="69" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="70" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="71" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="72" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="73" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="74" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="75" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="76" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="77" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="78" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="79" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="80" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="81" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="82" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="83" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="84" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="85" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="86" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="87" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="88" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="89" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="90" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="91" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="92" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="93" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="94" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="95" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="96" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="97" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="98" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="99" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="100" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="101" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="102" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="103" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="104" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="105" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="106" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="107" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="108" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="109" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="110" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="111" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="112" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="113" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="114" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="115" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="116" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="117" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="118" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="119" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="120" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="121" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="122" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="123" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="124" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="125" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="126" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="127" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="128" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="129" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="130" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="131" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="132" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="133" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="134" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="135" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="136" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="137" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="138" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="139" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="140" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="141" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="142" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="143" onclick="reply_click(this.id)"></div>
-          <div class="cell" id="144" onclick="reply_click(this.id)"></div>
-        </div>
-      </div>
-    </section>
-    <script src="../js/astar_js.js"></script>
-  </body>
-</html>
+body{
+background-image:url("https://i.pinimg.com/originals/e4/98/1a/e4981a3dd4aa2fa6f0bc84cde9087c7a.jpg");
+background-color: #3A3939; background-repeat:no-repeat; background-size:cover; }
+section { display:inline-block; margin-top:5px; box-sizing: border-box; float:
+left; width:55%; font-style: italic; } aside{ font-size:10pt;
+display:inline-block; float: right; width:40%; color:white; } .container {
+background: black; display: inline-block; border: 5px solid black; } .grid {
+display: grid; grid-template-columns: repeat(12,3rem); grid-template-rows:
+repeat(12,3rem); grid-gap: 2px; } .cell { background: white;} .container1 {
+position: absolute; display: inline-block; border: 0px solid black; left:45rem;
+} .grid1 { display: grid; grid-template-columns: repeat(1, 500px);
+grid-template-rows: repeat(1, 400px); grid-gap: 10px; } .flip { position:
+relative; } .flip > .front { display: block; transition-duration: 0.5s;
+transition-property: transform, opacity; } .flip > .back { display: block;
+transition-duration: 0.5s; transition-property: transform, opacity; } .flip >
+.front { transform: rotateY(0deg); width: 50%%; width: 500px; height: 300px; }
+.flip > .back { position: absolute; opacity: 0; top: 0px; left: 0px; width:
+500px; height: 300px; transform: rotateY(90deg); } .flip:hover > .front {
+opacity: 1; transform: rotateY(90deg); } .flip:hover > .back { opacity: 1;
+transform: rotateY(0deg); width: 500px; height: 300px; } .flip { position:
+relative; display: inline-block; margin-right: 1px; margin-bottom: 1em; } .flip
+.front, .flip .back { display: block; background: #441c1c; color: #fff; width:
+inherit; background-size: cover !important; background-position: center
+!important; padding: 1em 2em; border-radius: 15px; } .flip .front p, .flip .back
+p { font-size: 15px; line-height: 80%; color: #999; } .text-shadow { position:
+absolute; z-index: 999; margin: 0 auto; left: 0; right: 0; text-align: center;
+font-size:60px; top: 38%; text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px
+rgba(0, 0, 0, 0.04), 3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.04),
+0.125rem 0.125rem rgba(0, 0, 0, 0.04), 6px 6px rgba(0, 0, 0, 0.04), 7px 7px
+rgba(0, 0, 0, 0.04), 8px 8px rgba(0, 0, 0, 0.04), 9px 9px rgba(0, 0, 0, 0.04),
+0.3125rem 0.3125rem rgba(0, 0, 0, 0.04), 11px 11px rgba(0, 0, 0, 0.04), 12px
+12px rgba(0, 0, 0, 0.04), 13px 13px rgba(0, 0, 0, 0.04), 14px 14px rgba(0, 0, 0,
+0.04), 0.625rem 0.625rem rgba(0, 0, 0, 0.04), 16px 16px rgba(0, 0, 0, 0.04),
+17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04), 19px 19px rgba(0,
+0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04); } button { font-size: 1.2em;
+text-align: center; background-color: white; color: black; font-weight: bold;
+border: 3px solid white; position: absolute; transform: translate(-50%, -50%);
+border-radius: 10px; z-index: 999; padding: 20px; font-family: 'Roboto Mono';
+height: 7vh; text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0,
+0.04), 3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.09), 0.125rem
+0.125rem rgba(0, 0, 0, 0.09), 6px 6px rgba(0, 0, 0, 0.09); } .button1 { left:
+48.5rem; width: 7vw; top:60vh; } .button2 { left: 61rem; width: 11vw; top:60vh;
+} .button3 { left: 73.5rem; width: 11vw; top:60vh; } .button5 { left: 61rem;
+width: 10vw; top:70vh; } .button6 { left: 73.5rem; width: 10vw; top:70vh; }
+.button7 { left: 48.5rem; width: 7vw; top:80vh; } .button8 { left: 61rem; width:
+7vw; top:80vh; } .button9 { left: 73.5rem; width:7vw; top:80vh; } form{
+font-size:15pt; margin-top:75%; margin-right:100%; margin-left:-32%; }

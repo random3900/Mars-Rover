@@ -1,233 +1,231 @@
 body{
-background-image:url("https://i.pinimg.com/originals/e4/98/1a/e4981a3dd4aa2fa6f0bc84cde9087c7a.jpg");
-  background-color: #3A3939;
-  background-repeat:no-repeat;
-  background-size:cover;
-}
-
-
-
-
-section {
-  display:inline-block;
-  margin-top:5px;
-  box-sizing: border-box;
-  float: left;
-  
- 
-  width:55%;
- 
-  font-style: italic;
- 
-}
-
-aside{
-  font-size:10pt;
-  display:inline-block;
-  float: right;
-  
-  width:40%;
-
- 
-  color:white;
- 
- 
-}
-
-.container {
-  background: black;
-  display: inline-block;
-  border: 5px solid black;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12,3rem);
-  grid-template-rows: repeat(12,3rem);
-  grid-gap: 2px;
- 
-} 
-.cell {
-  background: white;}
-
-
-
-
-.container1 {
-	 position: absolute;
-	 display: inline-block;
-	 border: 0px solid black;
-   left:45rem;
-  
-}
- .grid1 {
-	 display: grid;
-	 grid-template-columns: repeat(1, 500px);
-	 grid-template-rows: repeat(1, 400px);
-	 grid-gap: 10px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-.flip {
-	 position: relative;
-}
- .flip > .front {
-	 display: block;
-	 transition-duration: 0.5s;
-	 transition-property: transform, opacity;
-}
- .flip > .back {
-	 display: block;
-	 transition-duration: 0.5s;
-	 transition-property: transform, opacity;
-}
- .flip > .front {
-	 transform: rotateY(0deg);
-	 width: 50%%;
-	 width: 500px;
-	 height: 300px;
-}
- .flip > .back {
-	 position: absolute;
-	 opacity: 0;
-	 top: 0px;
-	 left: 0px;
-	 width: 500px;
-	 height: 300px;
-	 transform: rotateY(90deg);
-}
- .flip:hover > .front {
-	 opacity: 1;
-	 transform: rotateY(90deg);
-}
- .flip:hover > .back {
-	 opacity: 1;
-	 transform: rotateY(0deg);
-	 width: 500px;
-	 height: 300px;
-}
- .flip {
-	 position: relative;
-	 display: inline-block;
-	 margin-right: 1px;
-	 margin-bottom: 1em;
-}
- .flip .front, .flip .back {
-	 display: block;
-	 background: #441c1c;
-	 color: #fff;
-	 width: inherit;
-	 background-size: cover !important;
-	 background-position: center !important;
-	 padding: 1em 2em;
-	 border-radius: 15px;
-}
- .flip .front p, .flip .back p {
-	 font-size: 15px;
-	 line-height: 80%;
-	 color: #999;
-}
- .text-shadow {
-	 position: absolute;
-	 z-index: 999;
-	 margin: 0 auto;
-	 left: 0;
-	 right: 0;
-	 text-align: center;
-   font-size:60px;
-	 top: 38%;
-	 text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.04), 0.125rem 0.125rem rgba(0, 0, 0, 0.04), 6px 6px rgba(0, 0, 0, 0.04), 7px 7px rgba(0, 0, 0, 0.04), 8px 8px rgba(0, 0, 0, 0.04), 9px 9px rgba(0, 0, 0, 0.04), 0.3125rem 0.3125rem rgba(0, 0, 0, 0.04), 11px 11px rgba(0, 0, 0, 0.04), 12px 12px rgba(0, 0, 0, 0.04), 13px 13px rgba(0, 0, 0, 0.04), 14px 14px rgba(0, 0, 0, 0.04), 0.625rem 0.625rem rgba(0, 0, 0, 0.04), 16px 16px rgba(0, 0, 0, 0.04), 17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04), 19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
-}
-
-  
-  
- 
-button {
-	 font-size: 1.2em;
-   text-align: center;
-	 background-color: white;
-	 color: black;
-	 font-weight: bold;
-	 border: 3px solid white;
-	 position: absolute;
-	 transform: translate(-50%, -50%);
-	 border-radius: 10px;
-	 z-index: 999;
-	 padding: 20px;
-	 font-family: 'Roboto Mono';
+	background-image:url("https://i.pinimg.com/originals/e4/98/1a/e4981a3dd4aa2fa6f0bc84cde9087c7a.jpg");
+	  background-color: #3A3939;
+	  background-repeat:no-repeat;
+	  background-size:cover;
+	}
+	
+	
+	
+	
+	section {
+	  display:inline-block;
+	  margin-top:5px;
+	  box-sizing: border-box;
+	  float: left;
+	  
+	 
+	  width:55%;
+	 
+	  font-style: italic;
+	 
+	}
+	
+	aside{
+	  font-size:10pt;
+	  display:inline-block;
+	  float: right;
+	  
+	  width:40%;
+	
+	 
+	  color:white;
 	 
 	 
-	 height: 7vh;
-	 text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.09), 0.125rem 0.125rem rgba(0, 0, 0, 0.09), 6px 6px rgba(0, 0, 0, 0.09);
-}
-
-
-
-.button1 {
-	 left: 48.5rem;
-	 width: 7vw;
-   top:60vh;
-}
- .button2 {
-	 left: 61rem;
-	 width: 11vw;
-   top:60vh;
-}
- .button3 {
-	 left: 73.5rem;
-	 width: 11vw;
-   top:60vh;
-}
-
- .button5 {
-	 left: 61rem;
-	 width: 10vw;
-   top:70vh;
-}
- .button6 {
-	 left: 73.5rem;
-	 width: 10vw;
-   top:70vh;
-}
-
-.button7 {
-	 left: 48.5rem;
-	 width: 7vw;
-   top:80vh;
-}
-
-.button8 {
-	 left: 61rem;
-	 width: 7vw;
-   top:80vh;
-}
-
-.button9 {
-	 left: 73.5rem;
-	 width:7vw;
-   top:80vh;
-}
-
-
-
-form{
-  font-size:15pt;
-  margin-top:75%;
-  margin-right:100%;
-  margin-left:-32%;
- 
-}
-
-
-
-
+	}
+	
+	.container {
+	  background: black;
+	  display: inline-block;
+	  border: 5px solid black;
+	}
+	
+	.grid {
+	  display: grid;
+	  grid-template-columns: repeat(12,3rem);
+	  grid-template-rows: repeat(12,3rem);
+	  grid-gap: 2px;
+	 
+	} 
+	.cell {
+	  background: white;}
+	
+	
+	
+	
+	.container1 {
+		 position: absolute;
+		 display: inline-block;
+		 border: 0px solid black;
+	   left:45rem;
+	  
+	}
+	 .grid1 {
+		 display: grid;
+		 grid-template-columns: repeat(1, 500px);
+		 grid-template-rows: repeat(1, 400px);
+		 grid-gap: 10px;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	.flip {
+		 position: relative;
+	}
+	 .flip > .front {
+		 display: block;
+		 transition-duration: 0.5s;
+		 transition-property: transform, opacity;
+	}
+	 .flip > .back {
+		 display: block;
+		 transition-duration: 0.5s;
+		 transition-property: transform, opacity;
+	}
+	 .flip > .front {
+		 transform: rotateY(0deg);
+		 width: 50%%;
+		 width: 500px;
+		 height: 300px;
+	}
+	 .flip > .back {
+		 position: absolute;
+		 opacity: 0;
+		 top: 0px;
+		 left: 0px;
+		 width: 500px;
+		 height: 300px;
+		 transform: rotateY(90deg);
+	}
+	 .flip:hover > .front {
+		 opacity: 1;
+		 transform: rotateY(90deg);
+	}
+	 .flip:hover > .back {
+		 opacity: 1;
+		 transform: rotateY(0deg);
+		 width: 500px;
+		 height: 300px;
+	}
+	 .flip {
+		 position: relative;
+		 display: inline-block;
+		 margin-right: 1px;
+		 margin-bottom: 1em;
+	}
+	 .flip .front, .flip .back {
+		 display: block;
+		 background: #441c1c;
+		 color: #fff;
+		 width: inherit;
+		 background-size: cover !important;
+		 background-position: center !important;
+		 padding: 1em 2em;
+		 border-radius: 15px;
+	}
+	 .flip .front p, .flip .back p {
+		 font-size: 15px;
+		 line-height: 80%;
+		 color: #999;
+	}
+	 .text-shadow {
+		 position: absolute;
+		 z-index: 999;
+		 margin: 0 auto;
+		 left: 0;
+		 right: 0;
+		 text-align: center;
+	   font-size:60px;
+		 top: 38%;
+		 text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.04), 0.125rem 0.125rem rgba(0, 0, 0, 0.04), 6px 6px rgba(0, 0, 0, 0.04), 7px 7px rgba(0, 0, 0, 0.04), 8px 8px rgba(0, 0, 0, 0.04), 9px 9px rgba(0, 0, 0, 0.04), 0.3125rem 0.3125rem rgba(0, 0, 0, 0.04), 11px 11px rgba(0, 0, 0, 0.04), 12px 12px rgba(0, 0, 0, 0.04), 13px 13px rgba(0, 0, 0, 0.04), 14px 14px rgba(0, 0, 0, 0.04), 0.625rem 0.625rem rgba(0, 0, 0, 0.04), 16px 16px rgba(0, 0, 0, 0.04), 17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04), 19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
+	}
+	
+	  
+	  
+	 
+	button {
+		 font-size: 1.2em;
+	   text-align: center;
+		 background-color: white;
+		 color: black;
+		 font-weight: bold;
+		 border: 3px solid white;
+		 position: absolute;
+		 transform: translate(-50%, -50%);
+		 border-radius: 10px;
+		 z-index: 999;
+		 padding: 20px;
+		 font-family: 'Roboto Mono';
+		 
+		 
+		 height: 7vh;
+		 text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.09), 0.125rem 0.125rem rgba(0, 0, 0, 0.09), 6px 6px rgba(0, 0, 0, 0.09);
+	}
+	
+	
+	
+	.button1 {
+		 left: 48.5rem;
+		 width: 7vw;
+	   top:60vh;
+	}
+	 .button2 {
+		 left: 61rem;
+		 width: 11vw;
+	   top:60vh;
+	}
+	 .button3 {
+		 left: 73.5rem;
+		 width: 11vw;
+	   top:60vh;
+	}
+	
+	 .button5 {
+		 left: 61rem;
+		 width: 10vw;
+	   top:70vh;
+	}
+	 .button6 {
+		 left: 73.5rem;
+		 width: 10vw;
+	   top:70vh;
+	}
+	
+	.button7 {
+		 left: 48.5rem;
+		 width: 7vw;
+	   top:80vh;
+	}
+	
+	.button8 {
+		 left: 61rem;
+		 width: 7vw;
+	   top:80vh;
+	}
+	
+	.button9 {
+		 left: 73.5rem;
+		 width:7vw;
+	   top:80vh;
+	}
+	
+	
+	
+	form{
+	  font-size:15pt;
+	  margin-top:75%;
+	  margin-right:100%;
+	  margin-left:-32%;
+	 
+	}
+	
+	

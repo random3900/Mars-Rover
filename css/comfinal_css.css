@@ -1,186 +1,194 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
- * {
-	 -webkit-box-sizing: border-box;
-	 box-sizing: border-box;
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
- body {
-	 
-	 background-image:url("https://i.pinimg.com/originals/e4/98/1a/e4981a3dd4aa2fa6f0bc84cde9087c7a.jpg");
-         color: #555;
-	 text-align: center;
-	 font-family: 'Roboto Mono';
-   background-repeat: no-repeat;
-   background-size: cover;
-}
-
- section {
-	 float: left;
-	 width: 1%;
-	 height: 100%;
-	 margin-top: 100px;
-	 margin-bottom: 5px;
+body {
+  background-image: url("https://i.pinimg.com/originals/e4/98/1a/e4981a3dd4aa2fa6f0bc84cde9087c7a.jpg");
+  color: #555;
+  text-align: center;
+  font-family: "Roboto Mono";
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-
- .container {
-	 position: absolute;
-	 background: #8F8989;
-	 display: inline-block;
-	 border: 5px #8F898;
-	 left: 7rem;
-         top:12vh;
-   
-}
- .grid {
-	 display: grid;
-	 grid-template-columns: repeat(12, 3rem);
-	 grid-template-rows: repeat(12, 3rem);
-	 grid-gap: 3px;
-   
-}
- .cell {
-	 color: black;
-	 align-items: center;
-	 font-size: 25px;
-	 font-style: italic;
-	 background: white;
-   text-align:center;
-   
-}
- aside {
-	 float: right;
-	 clear: both;
-	 width: 90%;
-	 margin-bottom: 5px;
-}
- .container1 {
-	 position: absolute;
-	 display: inline-block;
-	 border: 0px solid black;
-         left:55rem;
-         top:15vh;
-}
- .grid1 {
-	 display: grid;
-	 grid-template-columns: repeat(1,500px);
-	 grid-template-rows: repeat(1, 300px);
-	 grid-gap: 20px;
-}
- button {
-	 font-size: 0.9em;
-	 background-color: white;
-	 color: black;
-	 font-weight: bold;
-	 border: 3px solid white;
-	 position: absolute;
-	 transform: translate(-50%, -50%);
-	 border-radius: 20px;
-	 z-index: 999;
-         padding: 20px;
-	 font-family: 'Roboto Mono';
-	 text-align: center;
-	 
-	 height: 8vh;
-	 text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.09), 0.125rem 0.125rem rgba(0, 0, 0, 0.09), 6px 6px rgba(0, 0, 0, 0.09);
-}
- .button1 {
-	 left: 5rem;
-	 width: 7vw;
-         top: 5vh;
-}
- .button2 {
-	 left: 14rem;
-	 width: 9vw;
-         top: 5vh;
-}
- .button3 {
-	 left: 23rem;
-	 width: 7vw;
-         top: 5vh;
-}
- .button4 {
-	 left: 31rem;
-	 width: 6vw;
-         top: 5vh;
-}
- .button5 {
-	 left: 41rem;
-	 width: 11vw;
-         top: 5vh;
-}
- .button6 {
-	 left: 55rem;
-	 width: 15vw;
-         top: 5vh;
+section {
+  float: left;
+  width: 1%;
+  height: 100%;
+  margin-top: 100px;
+  margin-bottom: 5px;
 }
 
- .flip {
-	 position: relative;
+.container {
+  position: absolute;
+  background: #8f8989;
+  display: inline-block;
+  border: 5px #8F898;
+  left: 7rem;
+  top: 12vh;
 }
- .flip > .front {
-	 display: block;
-	 transition-duration: 0.5s;
-	 transition-property: transform, opacity;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 3rem);
+  grid-template-rows: repeat(12, 3rem);
+  grid-gap: 3px;
 }
- .flip > .back {
-	 display: block;
-	 transition-duration: 0.5s;
-	 transition-property: transform, opacity;
+.cell {
+  color: black;
+  align-items: center;
+  font-size: 25px;
+  font-style: italic;
+  background: white;
+  text-align: center;
 }
- .flip > .front {
-	 transform: rotateY(0deg);
-	 width: 100%;
-	 width: 500px;
-	 height: 450px;
+aside {
+  float: right;
+  clear: both;
+  width: 90%;
+  margin-bottom: 5px;
 }
- .flip > .back {
-	 position: absolute;
-	 opacity: 0;
-	 top: 0px;
-	 left: 0px;
-	 width: 500px;
-	 height: 450px;
-	 transform: rotateY(90deg);
+.container1 {
+  position: absolute;
+  display: inline-block;
+  border: 0px solid black;
+  left: 55rem;
+  top: 15vh;
 }
- .flip:hover > .front {
-	 opacity: 1;
-	 transform: rotateY(90deg);
+.grid1 {
+  display: grid;
+  grid-template-columns: repeat(1, 500px);
+  grid-template-rows: repeat(1, 300px);
+  grid-gap: 20px;
 }
- .flip:hover > .back {
-	 opacity: 1;
-	 transform: rotateY(0deg);
-	 width: 500px;
-	 height: 450px;
+button {
+  font-size: 0.9em;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border: 3px solid white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  z-index: 999;
+  padding: 20px;
+  font-family: "Roboto Mono";
+  text-align: center;
+
+  height: 8vh;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04),
+    3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.09),
+    0.125rem 0.125rem rgba(0, 0, 0, 0.09), 6px 6px rgba(0, 0, 0, 0.09);
 }
- .flip {
-	 position: relative;
-	 display: inline-block;
-	 margin-right: 2px;
-	 margin-bottom: 1em;
+.button1 {
+  left: 5rem;
+  width: 7vw;
+  top: 5vh;
 }
- .flip .front, .flip .back {
-	 display: block;
-	 background: #441c1c;
-	 color: #fff;
-	 width: inherit;
-	 background-size: cover !important;
-	 background-position: center !important;
-	 padding: 1em 2em;
-	 border-radius: 30px;
+.button2 {
+  left: 14rem;
+  width: 9vw;
+  top: 5vh;
 }
- .flip .front p, .flip .back p {
-	 font-size: 0.8em;
-	 line-height: 160%;
-	 color: #999;
+.button3 {
+  left: 23rem;
+  width: 7vw;
+  top: 5vh;
 }
- .text-shadow {
-	 position: absolute;
-	 z-index: 999;
-	 margin: 0 auto;
-	 left: 0;
-	 right: 0;
-	 text-align: center;
-   font-size:2em;
-	 top: 38%;
-	 text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.04), 0.125rem 0.125rem rgba(0, 0, 0, 0.04), 6px 6px rgba(0, 0, 0, 0.04), 7px 7px rgba(0, 0, 0, 0.04), 8px 8px rgba(0, 0, 0, 0.04), 9px 9px rgba(0, 0, 0, 0.04), 0.3125rem 0.3125rem rgba(0, 0, 0, 0.04), 11px 11px rgba(0, 0, 0, 0.04), 12px 12px rgba(0, 0, 0, 0.04), 13px 13px rgba(0, 0, 0, 0.04), 14px 14px rgba(0, 0, 0, 0.04), 0.625rem 0.625rem rgba(0, 0, 0, 0.04), 16px 16px rgba(0, 0, 0, 0.04), 17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04), 19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
+.button4 {
+  left: 31rem;
+  width: 6vw;
+  top: 5vh;
+}
+.button5 {
+  left: 41rem;
+  width: 11vw;
+  top: 5vh;
+}
+.button6 {
+  left: 55rem;
+  width: 15vw;
+  top: 5vh;
+}
+
+.flip {
+  position: relative;
+}
+.flip > .front {
+  display: block;
+  transition-duration: 0.5s;
+  transition-property: transform, opacity;
+}
+.flip > .back {
+  display: block;
+  transition-duration: 0.5s;
+  transition-property: transform, opacity;
+}
+.flip > .front {
+  transform: rotateY(0deg);
+  width: 100%;
+  width: 500px;
+  height: 450px;
+}
+.flip > .back {
+  position: absolute;
+  opacity: 0;
+  top: 0px;
+  left: 0px;
+  width: 500px;
+  height: 450px;
+  transform: rotateY(90deg);
+}
+.flip:hover > .front {
+  opacity: 1;
+  transform: rotateY(90deg);
+}
+.flip:hover > .back {
+  opacity: 1;
+  transform: rotateY(0deg);
+  width: 500px;
+  height: 450px;
+}
+.flip {
+  position: relative;
+  display: inline-block;
+  margin-right: 2px;
+  margin-bottom: 1em;
+}
+.flip .front,
+.flip .back {
+  display: block;
+  background: #441c1c;
+  color: #fff;
+  width: inherit;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 1em 2em;
+  border-radius: 30px;
+}
+.flip .front p,
+.flip .back p {
+  font-size: 0.8em;
+  line-height: 160%;
+  color: #999;
+}
+.text-shadow {
+  position: absolute;
+  z-index: 999;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 2em;
+  top: 38%;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04),
+    3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.04),
+    0.125rem 0.125rem rgba(0, 0, 0, 0.04), 6px 6px rgba(0, 0, 0, 0.04),
+    7px 7px rgba(0, 0, 0, 0.04), 8px 8px rgba(0, 0, 0, 0.04),
+    9px 9px rgba(0, 0, 0, 0.04), 0.3125rem 0.3125rem rgba(0, 0, 0, 0.04),
+    11px 11px rgba(0, 0, 0, 0.04), 12px 12px rgba(0, 0, 0, 0.04),
+    13px 13px rgba(0, 0, 0, 0.04), 14px 14px rgba(0, 0, 0, 0.04),
+    0.625rem 0.625rem rgba(0, 0, 0, 0.04), 16px 16px rgba(0, 0, 0, 0.04),
+    17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04),
+    19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
 }

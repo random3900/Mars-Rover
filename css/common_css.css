@@ -97,11 +97,9 @@ color:"white";
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 5%;
- 
 }
 
 .fcf-astar {
-  /* background-color: #bbb; */
   color: white;
   padding: 5px;
   background-image: url(../gifs/astar.gif);
@@ -112,7 +110,6 @@ color:"white";
 
 }
 .fcf-bfs {
-  /* background-color: #bbb; */
   color: white;
   padding: 5px;
   background-image: url(../gifs/bell.gif) ;
@@ -124,7 +121,6 @@ color:"white";
 }
 
 .fcf-bell {
-  /* background-color: #bbb; */
   color: white;
   padding: 5px;
   background-image: url(../gifs/bfs.gif) ;
